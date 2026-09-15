@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com" xmlns:fx="http://javafx.com" fx:controller="kz.atu.lab03.CalculatorController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР" />
+
+    <GridPane hgap="10.0" vgap="10.0" alignment="CENTER">
+        <Label text="Первое число:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="txtNumber1" promptText="Первое число" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Второе число:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtNumber2" promptText="Второе число" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button text="+" onAction="#onOperation" minWidth="40"/>
+        <Button text="-" onAction="#onOperation" minWidth="40"/>
+        <Button text="x" onAction="#onOperation" minWidth="40"/>
+        <Button text="/" onAction="#onOperation" minWidth="40"/>
+        <Button text="Max" onAction="#onOperation" minWidth="45"/>
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="5.0">
+        <Label fx:id="lblResult" text="Результат: 0" />
+        <Label fx:id="lblOperation" text="Операция: -" />
+    </VBox>
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button text="Очистить" onAction="#onClearClick" />
+        <Button text="Выход" onAction="#onExitClick" />
+    </HBox>
+</VBox>
