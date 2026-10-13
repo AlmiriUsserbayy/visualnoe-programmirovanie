@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kz.atu.lab07.EditorController"
+            stylesheets="@style.css">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Файл">
+                    <MenuItem fx:id="miNew" text="Новый" onAction="#onNew"/>
+                    <MenuItem fx:id="miOpen" text="Открыть..." onAction="#onOpen"/>
+                    <MenuItem fx:id="miSave" text="Сохранить" onAction="#onSave"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Выход" onAction="#onExit"/>
+                </Menu>
+                <Menu text="Правка">
+                    <MenuItem text="Вырезать" onAction="#onCut" accelerator="Shortcut+X"/>
+                    <MenuItem text="Копировать" onAction="#onCopy" accelerator="Shortcut+C"/>
+                    <MenuItem text="Вставить" onAction="#onPaste" accelerator="Shortcut+V"/>
+                    <SeparatorMenuItem/>
+                    <!-- Ваш индивидуальный вариант №2 -->
+                    <MenuItem text="Выделить всё" onAction="#onSelectAll" accelerator="Shortcut+A"/>
+                </Menu>
+                <Menu text="Справка">
+                    <MenuItem text="О программе" onAction="#onAbout"/>
+                </Menu>
+            </MenuBar>
+
+            <ToolBar>
+                <Button text="📄 Новый" onAction="#onNew"/>
+                <Button text="📂 Открыть" onAction="#onOpen"/>
+                <Button text="💾 Сохранить" onAction="#onSave"/>
+                <Separator/>
+                <Button text="📋 Копировать" onAction="#onCopy"/>
+                <Button text="✂ Вырезать" onAction="#onCut"/>
+                <Button text="📋 Вставить" onAction="#onPaste"/>
+                <Separator/>
+                <Button text="✨ Выделить всё" onAction="#onSelectAll"/>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <TextArea fx:id="txtEditor" promptText="Введите текст здесь...">
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem text="Вырезать" onAction="#onCut"/>
+                        <MenuItem text="Копировать" onAction="#onCopy"/>
+                        <MenuItem text="Вставить" onAction="#onPaste"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Выделить всё" onAction="#onSelectAll"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TextArea>
+    </center>
+
+    <bottom>
+        <HBox styleClass="status-bar">
+            <Label fx:id="lblStatus" text="Готово к работе"/>
+        </HBox>
+    </bottom>
+</BorderPane>
