@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com" xmlns:fx="http://javafx.com" fx:controller="com.example.studentmgmt.controller.MainController">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu text="Файл">
+                            <items>
+                                <MenuItem text="Выход" onAction="#handleExit" accelerator="Shortcut+Q"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                        <Button text="Добавить" onAction="#handleAddStudent"/>
+                        <Button text="Редактировать" onAction="#handleEditStudent"/>
+                        <Button text="Удалить" onAction="#handleDeleteStudent"/>
+                        <Separator orientation="VERTICAL" />
+                        <TextField fx:id="searchField" promptText="Поиск по ФИО..." prefWidth="180.0"/>
+                        <ComboBox fx:id="groupFilterComboBox" promptText="Фильтр по группе" prefWidth="130.0"/>
+                        <Button text="Сброс" onAction="#handleClearFilter"/>
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="studentTable" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="100.0"/>
+                <TableColumn fx:id="nameColumn" text="ФИО Студента" prefWidth="300.0"/>
+                <TableColumn fx:id="groupColumn" text="Группа" prefWidth="150.0"/>
+                <TableColumn fx:id="gpaColumn" text="GPA" prefWidth="100.0"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #eaeaea;" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="statusLabel" text="Программа готова к работе.">
+                    <HBox.margin>
+                        <Insets left="10.0" top="4.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

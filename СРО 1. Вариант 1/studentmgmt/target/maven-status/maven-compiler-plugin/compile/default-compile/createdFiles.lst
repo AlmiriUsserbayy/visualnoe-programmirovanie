@@ -1,0 +1,6 @@
+com\example\studentmgmt\HelloController.class
+com\example\studentmgmt\controller\MainController.class
+module-info.class
+com\example\studentmgmt\MainApp.class
+com\example\studentmgmt\model\Student.class
+com\example\studentmgmt\controller\StudentFormController.class
