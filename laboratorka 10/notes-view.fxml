@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com" fx:controller="kz.atu.lab10.NotesController">
+    <top>
+        <ToolBar>
+            <Button text="Открыть JSON" onAction="#onOpen"/>
+            <Button text="Сохранить JSON" onAction="#onSave"/>
+            <Separator/>
+            <Label text="Поиск:"/>
+            <TextField fx:id="txtSearch" promptText="Введите для поиска..."/>
+            <Label text="Фильтр:"/>
+            <ComboBox fx:id="cmbFilter"/>
+        </ToolBar>
+    </top>
+    <left>
+        <ListView fx:id="listNotes" prefWidth="250"/>
+    </left>
+    <center>
+        <VBox spacing="10" style="-fx-padding: 14;">
+            <TextField fx:id="txtTitle" promptText="Название планов..."/>
+            <ComboBox fx:id="cmbCategory" promptText="Выберите категорию" prefWidth="200"/>
+            <TextArea fx:id="txtBody" promptText="Детали плана..." VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10">
+                <Button text="Добавить" onAction="#onAdd"/>
+                <Button text="Изменить" onAction="#onEdit"/>
+                <Button text="Удалить" onAction="#onDelete"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="lblStatus" text="Готово" style="-fx-padding: 5;"/>
+    </bottom>
+</BorderPane>
